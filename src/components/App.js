@@ -26,25 +26,27 @@ const App = () => {
       },0)
     }
     return(
+      <>
+      <h1 className="title">Tour</h1>
       <main id="main">
-
-        {TempTours.length>0 ? (loading===true ? <p>Loading...</p> :(
+        {TempTours.length>0 ? (loading===true ? <p className=";loading">Loading...</p> :(
           TempTours.map((tour,index)=>(
-            <div className="card" key={index}>
+            <div className="single-tour" key={index}>
               <h1>{tour.name}</h1>
               <img src="https://e0.pxfuel.com/wallpapers/662/760/desktop-wallpaper-best-ideas-about-travel-dreams-world-8-travel-agency-travel-and-tourism.jpg"></img>
-              <p className="info" onClick={()=>showDetailsInfor(index)}>{showmore.includes(index) ? (tour.info+"         show Less"):"Show More"}</p>
-              <b>Rs {tour.price}</b>
-              <button onClick={()=>deletetour(index)}>Delete Tour</button>
+              <p className="tour-info" onClick={()=>showDetailsInfor(index)}>{showmore.includes(index) ? (tour.info+"         show Less"):"Show More"}</p>
+              <b className="tour-price">Rs {tour.price}</b>
+              <button onClick={()=>deletetour(index)} className="delete-btn">Delete Tour</button>
             </div>
           )))):(<div>
             <p>No more tours</p>
-            <button onClick={()=>setTempTours(tours)}>refresh</button>
+            <button onClick={()=>setTempTours(tours)} className="btn">refresh</button>
           </div>
           )
           
         }
       </main>
+      </>
     )
 }
 export default App;

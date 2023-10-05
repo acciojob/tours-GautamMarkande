@@ -11,10 +11,13 @@ h1 {
 img{
     width: 400px;
 }
+.title{
+    text-align: center;
+}
 .info{
     cursor: pointer;
 }
-.card{
+.single-tou{
     display: flex;
     flex-direction: column;
     align-items: center;
